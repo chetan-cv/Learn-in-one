@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "144653325752",
+    "firebase_url": "https://learn-in-one-1594051122808.firebaseio.com",
+    "project_id": "learn-in-one-1594051122808",
+    "storage_bucket": "learn-in-one-1594051122808.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:144653325752:android:0f7cc380deb5f996b42b4d",
+        "android_client_info": {
+          "package_name": "com.example.learninone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "144653325752-cs1mrh5f5ekshm2juqocob0jstrmh81b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbw8KaqH5JuY43qOABPJ1xtzsIA1dIn-8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "144653325752-cs1mrh5f5ekshm2juqocob0jstrmh81b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
