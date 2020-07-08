@@ -1,8 +1,27 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/bhavyabansal/learn_in_one/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+            "outputFile": "/Users/bhavyabansal/Learn-in-one/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
             "map": [
+                {
+                    "source": "/Users/bhavyabansal/Learn-in-one/android/app/src/main/res/values/styles.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "347"
+                    },
+                    "to": {
+                        "startLines": "84",
+                        "startColumns": "4",
+                        "startOffsets": "6981",
+                        "endLines": "88",
+                        "endColumns": "12",
+                        "endOffsets": "7273"
+                    }
+                },
                 {
                     "source": "/Users/bhavyabansal/.gradle/caches/transforms-2/files-2.1/d255798b3263f4a3c8e304b7de4de531/coordinatorlayout-1.0.0/res/values/values.xml",
                     "from": {
@@ -20,6 +39,23 @@
                         "endLines": "2,109,126,215",
                         "endColumns": "60,12,24,24",
                         "endOffsets": "161,8697,9603,14814"
+                    }
+                },
+                {
+                    "source": "/Users/bhavyabansal/Learn-in-one/build/app/generated/res/google-services/debug/values/values.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,199,320,402,506,615,735,845",
+                        "endColumns": "143,120,81,103,108,119,109,86",
+                        "endOffsets": "194,315,397,501,610,730,840,927"
+                    },
+                    "to": {
+                        "startLines": "75,76,77,78,79,80,81,82",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "6033,6177,6298,6380,6484,6593,6713,6823",
+                        "endColumns": "143,120,81,103,108,119,109,86",
+                        "endOffsets": "6172,6293,6375,6479,6588,6708,6818,6905"
                     }
                 },
                 {
@@ -56,42 +92,6 @@
                         "startOffsets": "3562,4740",
                         "endColumns": "67,166",
                         "endOffsets": "3625,4902"
-                    }
-                },
-                {
-                    "source": "/Users/bhavyabansal/learn_in_one/android/app/src/main/res/values/styles.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endLines": "6",
-                        "endColumns": "12",
-                        "endOffsets": "347"
-                    },
-                    "to": {
-                        "startLines": "84",
-                        "startColumns": "4",
-                        "startOffsets": "6981",
-                        "endLines": "88",
-                        "endColumns": "12",
-                        "endOffsets": "7273"
-                    }
-                },
-                {
-                    "source": "/Users/bhavyabansal/learn_in_one/build/app/generated/res/google-services/debug/values/values.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,199,320,402,506,615,735,845",
-                        "endColumns": "143,120,81,103,108,119,109,86",
-                        "endOffsets": "194,315,397,501,610,730,840,927"
-                    },
-                    "to": {
-                        "startLines": "75,76,77,78,79,80,81,82",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "6033,6177,6298,6380,6484,6593,6713,6823",
-                        "endColumns": "143,120,81,103,108,119,109,86",
-                        "endOffsets": "6172,6293,6375,6479,6588,6708,6818,6905"
                     }
                 },
                 {

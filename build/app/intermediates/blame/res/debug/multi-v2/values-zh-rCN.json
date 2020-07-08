@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/bhavyabansal/learn_in_one/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-zh-rCN/values-zh-rCN.xml",
+            "outputFile": "/Users/bhavyabansal/Learn-in-one/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-zh-rCN/values-zh-rCN.xml",
             "map": [
                 {
                     "source": "/Users/bhavyabansal/.gradle/caches/transforms-2/files-2.1/c1da7862c7abb8e426855a3f78caf221/core-1.0.0/res/values-zh-rCN/values-zh-rCN.xml",

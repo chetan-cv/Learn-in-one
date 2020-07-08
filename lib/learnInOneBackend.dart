@@ -12,7 +12,7 @@ var id = new ClientId("144653325752-glb24615svm5ucjil2kogumg2dton40i.apps.google
 var scopes = ['https://www.googleapis.com/auth/classroom.courses.readonly'];
 
 
-Future<String> getingCourses() async {
+Future<List<Course>> getingCourses() async {
 
   GoogleSignIn _googleSignIn = GoogleSignIn(
     scopes: [
@@ -24,18 +24,17 @@ Future<String> getingCourses() async {
   GoogleSignInAccount user = await _googleSignIn.signIn();
   GoogleSignInAuthentication auth = await user.authentication;
   ClassroomApi classroom = ClassroomApi(oauth2.Client(oauth2.Credentials(auth.accessToken), basicAuth: true));
-  classroom.courses.list().then((list){
-    print(list.courses[0].creationTime);
+  return classroom.courses.list().then((list){
+    print(list.courses);
+    return list.courses;
   });
-  FlutterSecureStorage _store = await FlutterSecureStorage();
+//  FlutterSecureStorage _store = await FlutterSecureStorage();
 
 //  client = authenticatedClient(client, AccessCredentials(AccessToken('String', auth.accessToken, ''), refreshToken, scopes));
 
-
-  _store.write(key: 'accessToken', value: auth.accessToken);
-  _store.write(key: 'idToken', value: auth.idToken);
-
-
+//
+//  _store.write(key: 'accessToken', value: auth.accessToken);
+//  _store.write(key: 'idToken', value: auth.idToken);
 
 //  http.get(Uri.encodeFull('https://www.googleapis.com/auth/classroom.coursework.me'), headers: {
 //  "Authorization": "Basic '${auth.accessToken}'"

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/bhavyabansal/learn_in_one/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-cs/values-cs.xml",
+            "outputFile": "/Users/bhavyabansal/Learn-in-one/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-cs/values-cs.xml",
             "map": [
                 {
                     "source": "/Users/bhavyabansal/.gradle/caches/transforms-2/files-2.1/914ff4a0c027ca815c4aeae65134bce3/jetified-play-services-base-16.0.1/res/values-cs/values.xml",

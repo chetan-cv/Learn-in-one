@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/bhavyabansal/learn_in_one/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-sq/values-sq.xml",
+            "outputFile": "/Users/bhavyabansal/Learn-in-one/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-sq/values-sq.xml",
             "map": [
                 {
                     "source": "/Users/bhavyabansal/.gradle/caches/transforms-2/files-2.1/29c4f67717195f9a484a03b04356851f/jetified-play-services-basement-16.0.1/res/values-sq/values.xml",

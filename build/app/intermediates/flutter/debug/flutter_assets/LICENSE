@@ -3968,6 +3968,7 @@ googleapis_auth
 http
 http_parser
 matcher
+oauth2
 path
 source_span
 stack_trace
