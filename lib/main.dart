@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:googleapis/classroom/v1.dart';
 import 'package:learninone/learnInOneBackend.dart';
-
+import 'Widgets/widgets.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -26,7 +26,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -35,6 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           body: SingleChildScrollView(
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Container(
@@ -45,42 +45,17 @@ class _MyHomePageState extends State<MyHomePage> {
                         TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
                   )),
                 ),
-                Container(
-                  height: MediaQuery.of(context).size.height,
-                  child: FutureBuilder<List<Course>>(
-                      future: getingCourses(),
-                      builder: (context, snapshot) {
-                        return snapshot.connectionState == ConnectionState.done
-                            ? Container(
-                                child: ListView.builder(
-                                    itemCount: snapshot.data.length,
-                                    itemBuilder: (context, index) {
-                                      return Card(
-                                        child: Container(
-                                          height: 200.0,
-                                          width:
-                                              MediaQuery.of(context).size.width,
-                                          child: Column(
-                                            children: <Widget>[
-                                              Container(
-                                                  child: Text(
-                                                      '${snapshot.data[index].name}'))
-                                            ],
-                                          ),
-                                        ),
-                                      );
-                                    }))
-                            : Container(
-                                height: 100.0,
-                                width: 100.0,
-                                child:
-                                    Center(child: CircularProgressIndicator()),
-                              );
-                      }),
-                ),
+                ClassroomCard(
+                  imageUrl:
+                      "https://www.universalschool.org/wp-content/uploads/2016/02/Academics-1-450x350.jpg",
+                  subjectName: "Science",
+                  Width: double.infinity,
+                  Height: 150,
+                )
               ],
             ),
           )),
     );
   }
 }
+
