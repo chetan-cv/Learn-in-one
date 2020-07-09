@@ -87,7 +87,7 @@ CREATE TABLE DiscussionForumStorage
   Future<int> addProduct(DiscussionModel record) async {
     Database db = await this.database;
 //    print(record.brand);
-    return db.insert('acceptedOrders', record.toMapforDb(),
+    return db.insert('DiscussionForumStorage', record.toMapforDb(),
         conflictAlgorithm: ConflictAlgorithm.replace);
   }
 
@@ -95,8 +95,8 @@ CREATE TABLE DiscussionForumStorage
 
   Future<DiscussionModel> fetchRecord(int id) async {
     Database db = await this.database;
-    final Future<List<Map<String, dynamic>>> futureMaps =
-    db.query('acceptedOrders', where: 'orderId = ?', whereArgs: [id]);
+    final Future<List<Map<String, dynamic>>> futureMaps = db
+        .query('DiscussionForumStorage', where: 'orderId = ?', whereArgs: [id]);
     var maps = await futureMaps;
 
     if (maps.length != 0) {
@@ -109,11 +109,11 @@ CREATE TABLE DiscussionForumStorage
 
   Future<List<DiscussionModel>> fetchingOrders() async {
     Database db = await this.database;
-    var resAll = await db.query('acceptedOrders');
+    var resAll = await db.query('DiscussionForumStorage');
     print(resAll.length);
     if (resAll.isNotEmpty) {
       List records =
-      resAll.map((product) => DiscussionModel.fromDb(product)).toList();
+          resAll.map((product) => DiscussionModel.fromDb(product)).toList();
 
       records.sort((a, b) => b.orderId.compareTo(a.orderId));
       return records;
@@ -121,22 +121,12 @@ CREATE TABLE DiscussionForumStorage
     return [];
   }
 
-//updating record from Database
-
-  Future<int> updateRecord(DiscussionModel newRecord) async {
-    Database db = await this.database;
-    return db.update('acceptedOrders', newRecord.toMapforDb(),
-        where: 'orderId = ?',
-        whereArgs: [newRecord.orderId],
-        conflictAlgorithm: ConflictAlgorithm.replace);
-  }
-
 //removing record from Database
 
   Future<void> removeRecord(int id) async {
     Database db = await this.database;
     return db.delete(
-      'acceptedOrders',
+      'DiscussionForumStorage',
       where: 'orderId = ?',
       whereArgs: [id],
     );
@@ -144,7 +134,7 @@ CREATE TABLE DiscussionForumStorage
 
   Future<void> deleteAll() async {
     final db = await database;
-    db.delete("acceptedOrders");
+    db.delete("DiscussionForumStorage");
   }
 
   Future closeDb() async {
@@ -155,8 +145,8 @@ CREATE TABLE DiscussionForumStorage
   Future<int> clear() async {
     final db = await this.database;
 
-    return db.delete("acceptedOrders");
+    return db.delete("DiscussionForumStorage");
   }
 }
 
-DiscussionForumStorage discussionForumStorage  = DiscussionForumStorage();
+DiscussionForumStorage discussionForumStorage = DiscussionForumStorage();

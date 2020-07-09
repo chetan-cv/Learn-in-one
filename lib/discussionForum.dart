@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:learninone/DiscussionRoom.dart';
 
 class DiscussionForum extends StatefulWidget {
   @override
@@ -55,14 +56,17 @@ class DiscussionForumState extends State<DiscussionForum> {
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 3, childAspectRatio: 2.0),
                       itemBuilder: (context, index) {
-                        return GridTile(
-                            child: Card(
-                                elevation: 2.0,
-                                child: Center(
-                                    child: Text(
-                                  tags[index],
-                                  textAlign: TextAlign.center,
-                                ))));
+                        return GestureDetector(
+                          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => DiscussionRoom(tag: tags[index]))),
+                          child: GridTile(
+                              child: Card(
+                                  elevation: 2.0,
+                                  child: Center(
+                                      child: Text(
+                                    tags[index],
+                                    textAlign: TextAlign.center,
+                                  )))),
+                        );
                       },
                     ),
                   ),
