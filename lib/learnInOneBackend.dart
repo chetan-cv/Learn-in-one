@@ -49,7 +49,7 @@ Future<http.Response> postingQuestion() async {
       "commentCount": 0,
       "closedDate": null,
       "author": null,
-//      "tags": [Id,....]
+      "tags": []
       }).then((response){
         return response;
   });

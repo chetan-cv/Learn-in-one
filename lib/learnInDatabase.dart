@@ -62,17 +62,17 @@ class DiscussionForumStorage {
     db.execute("""
 CREATE TABLE DiscussionForumStorage
   (
-orderId INTEGER PRIMARY KEY,
-orderList BLOB,
-time TEXT,
-date TEXT,
-orderAcceptStatus INTEGER,
-orderCompletionStatus INTEGER,
-orderReadyStatus INTEGER,
-paymentMode TEXT,
-paymentStatus INTEGER,
-orderCancelled INTEGER,
-customerDetails BLOB
+      title TEXT,
+      postType TEXT,
+      parentId: TEXT,
+      creationDate: TEXT,
+      score INTEGER,
+      body TEXT,
+      answerCount INTEGER,
+      commentCount INTEGER,
+      closedDate TEXT,
+      author TEXT,
+      tags BLOB
   )
   """);
     print("Database was created!");
