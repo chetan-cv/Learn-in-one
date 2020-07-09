@@ -30,14 +30,27 @@ Future<List<Course>> getingCourses() async {
 }
 
 Future gettingDiscussion() async {
-  http.get('https://learninone.herokuapp.com/post/list/').then((response){
+  await http.get('https://learninone.herokuapp.com/post/list/').then((response) {
     print(response.body);
   });
 }
 
-//Future courses() async {
-//  var classroom = ClassroomApi(client, rootUrl: 'https://www.googleapis.com/auth/classroom.courses.readonly');
-//  classroom.courses.list().then((list){
-//    print(list);
-//  });
-//}
+Future<http.Response> postingQuestion() async {
+  await http.post('https://learninone.herokuapp.com/post/list/',
+      body: {
+      "title": "Machine Learning",
+      "postType": "AI",
+      "parentId": "None",
+      "creationDate": "2020-07-09T05:25:41Z",
+      "score": 1,
+      "body": "How to learn Machine Learning?",
+      "image": null,
+      "answerCount": 0,
+      "commentCount": 0,
+      "closedDate": null,
+      "author": null,
+//      "tags": [Id,....]
+      }).then((response){
+        return response;
+  });
+}

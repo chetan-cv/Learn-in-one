@@ -1,7 +1,5 @@
-class ClasroomModel {
+class DiscussionModel {
 
-  String clssroomTitle;
-  String dateOfCreation;
-  String description;
+
 
 }
