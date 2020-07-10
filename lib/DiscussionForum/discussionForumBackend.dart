@@ -26,7 +26,7 @@ Future<http.Response> postingQuestion(String title, String question) async {
 Future<List<DiscussionModel>> gettingSearchedDiscussion(String title) async {
   print(title);
   return await http
-      .get('https://learninone.herokuapp.com/post/list/?title=$title')
+      .get('https://learninone.herokuapp.com/post/list/?search=$title')
       .then((response) {
     print(response.reasonPhrase);
     List mappedDiscussion = jsonDecode(response.body)['results'];
@@ -36,7 +36,7 @@ Future<List<DiscussionModel>> gettingSearchedDiscussion(String title) async {
       discussions.add(DiscussionModel.fromJson(element));
     });
     return discussions;
-  }).catchError((error){
+  }).catchError((error) {
     print(error);
   });
 }
@@ -54,7 +54,7 @@ Future<List<DiscussionModel>> gettingDiscussion(String title) async {
       discussions.add(DiscussionModel.fromJson(element));
     });
     return discussions;
-  }).catchError((error){
+  }).catchError((error) {
     print(error);
   });
 }
