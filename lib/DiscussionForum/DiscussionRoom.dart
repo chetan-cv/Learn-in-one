@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:learninone/classroomModel.dart';
-import 'package:learninone/discussionForumBackend.dart';
-import 'package:learninone/learnInOneBackend.dart';
+import 'file:///D:/projects/flutter/Learn-in-one/lib/Classroom/classroomModel.dart';
+import 'file:///D:/projects/flutter/Learn-in-one/lib/DiscussionForum/discussionForumBackend.dart';
+import 'file:///D:/projects/flutter/Learn-in-one/lib/Classroom/classroomBackend.dart';
 
 class DiscussionRoom extends StatefulWidget {
   String tag;
@@ -35,7 +35,7 @@ class DiscussionRoomState extends State<DiscussionRoom> {
       floatingActionButton: FloatingActionButton(
           child: Icon(Icons.cloud_upload),
           onPressed: () async {
-            return showDialog(
+            return await showDialog(
                 context: context,
                 builder: (context) => Dialog(
                       child: Container(
@@ -105,7 +105,7 @@ class DiscussionRoomState extends State<DiscussionRoom> {
 //            postingQuestion(tag),
           ),
       body: FutureBuilder<List<DiscussionModel>>(
-          future: gettingDiscussion(),
+          future: gettingDiscussion(widget.tag),
           builder: (context, snapshot) {
             return snapshot.connectionState == ConnectionState.done && snapshot.data != null
                 ? Container(
@@ -115,7 +115,7 @@ class DiscussionRoomState extends State<DiscussionRoom> {
                             Card(
                               child: ListTile(
                                 title: Center(child: Text('${snapshot.data[index].body}')),
-                                subtitle: Text('${snapshot.data[index].author}'),
+                                subtitle: Text('${snapshot.data[index].tags}'),
                               ),
                             )),
                   )

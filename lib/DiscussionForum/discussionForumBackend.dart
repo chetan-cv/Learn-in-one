@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:learninone/classroomModel.dart';
+import 'file:///D:/projects/flutter/Learn-in-one/lib/Classroom/classroomModel.dart';
 
 Future<http.Response> postingQuestion(String title, String question) async {
   FlutterSecureStorage _store = FlutterSecureStorage();
@@ -23,9 +23,9 @@ Future<http.Response> postingQuestion(String title, String question) async {
   });
 }
 
-Future<List<DiscussionModel>> gettingDiscussion() async {
+Future<List<DiscussionModel>> gettingDiscussion(String title) async {
   return await http
-      .get('https://learninone.herokuapp.com/post/list/')
+      .get('https://learninone.herokuapp.com/post/list/?tags=$title')
       .then((response) {
     List mappedDiscussion = jsonDecode(response.body)['results'];
     List<DiscussionModel> discussions = [];

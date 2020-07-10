@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:learninone/DiscussionRoom.dart';
+import 'DiscussionRoom.dart';
 
 class DiscussionForum extends StatefulWidget {
   @override

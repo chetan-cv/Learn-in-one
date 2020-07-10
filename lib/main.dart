@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:learninone/classroom.dart';
-import 'package:learninone/discussionForum.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'file:///D:/projects/flutter/Learn-in-one/lib/Classroom/classroom.dart';
+import 'file:///D:/projects/flutter/Learn-in-one/lib/DiscussionForum/discussionForum.dart';
 import 'Widgets/widgets.dart';
 
 List<String> assignments = ['1', '2', '3', '4', '5', '6'];
@@ -25,6 +27,14 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  FlutterSecureStorage _store = FlutterSecureStorage();
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    googleSignIn();
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -92,20 +102,43 @@ class _MyHomePageState extends State<MyHomePage> {
                     SizedBox(
                       height: 30,
                     ),
-                    GestureDetector(
-                      onTap: () => Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Classroom())),
-                      child: HomePageCard(
-                        imageUrl:
-                            "https://cdn-res.keymedia.com/cms/images/au/130/0314_637232847506093449.jpg",
-                        itemName: "Your Classrooms",
-                        Width: 300,
-                        Height: 200,
-                      ),
-                    ),
+                    FutureBuilder(
+                        future: _store.read(key: "accessToken"),
+                        builder: (context, snapshot) {
+                          return GestureDetector(
+                              onTap: () async => snapshot.data != null
+                                  ? Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => Classroom(snapshot.data)))
+                                  : await showDialog(
+                                      context: context,
+                                      builder: (context) => AlertDialog(
+                                            title: Text('Login please'),
+                                            content: RaisedButton(
+                                                child: Text(
+                                                  'Login',
+                                                  style: TextStyle(
+                                                      color: Colors.white),
+                                                ),
+                                                color: Colors.blue,
+                                                onPressed: () async =>
+                                                    await googleSignIn()),
+                                          )),
+                              child: HomePageCard(
+                                imageUrl:
+                                    "https://cdn-res.keymedia.com/cms/images/au/130/0314_637232847506093449.jpg",
+                                itemName: "Your Classrooms",
+                                Width: 300,
+                                Height: 200,
+                              ));
+                        }),
                     SizedBox(height: 30),
                     GestureDetector(
-                      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => DiscussionForum())),
+                      onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => DiscussionForum())),
                       child: HomePageCard(
                         imageUrl:
                             "https://www.revolutioninter.net/wp-content/uploads/2018/09/undraw_blogging_vpvv.png",
@@ -128,5 +161,29 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           )),
     );
+  }
+
+  Future googleSignIn() async {
+    GoogleSignIn _googleSignIn = GoogleSignIn(
+        scopes: [
+          'email',
+          'https://www.googleapis.com/auth/classroom.courses.readonly',
+        ],
+        clientId:
+            '144653325752-cs1mrh5f5ekshm2juqocob0jstrmh81b.apps.googleusercontent.com');
+
+    GoogleSignInAccount user = await _googleSignIn.signIn().catchError((error) {
+      print(error);
+    });
+    print('qwehqkwjekabewkjb ${user.displayName}');
+    await _store.write(key: 'name', value: user.displayName);
+    await _store.write(key: 'email', value: user.email);
+    await _store.write(key: 'url', value: user.photoUrl);
+
+    String name = await _store.read(key: 'name');
+    print(name);
+
+    GoogleSignInAuthentication auth = await user.authentication;
+    await _store.write(key: 'accessToken', value: auth.accessToken);
   }
 }
