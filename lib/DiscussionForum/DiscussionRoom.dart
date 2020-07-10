@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'file:///D:/projects/flutter/Learn-in-one/lib/Classroom/classroomModel.dart';
-import 'file:///D:/projects/flutter/Learn-in-one/lib/DiscussionForum/discussionForumBackend.dart';
-import 'file:///D:/projects/flutter/Learn-in-one/lib/Classroom/classroomBackend.dart';
+import 'package:googleapis/adsense/v1_4.dart';
+import 'classroomModel.dart';
+import 'discussionForumBackend.dart';
 
 class DiscussionRoom extends StatefulWidget {
   String tag;
@@ -107,21 +107,25 @@ class DiscussionRoomState extends State<DiscussionRoom> {
       body: FutureBuilder<List<DiscussionModel>>(
           future: gettingDiscussion(widget.tag),
           builder: (context, snapshot) {
-            return snapshot.connectionState == ConnectionState.done && snapshot.data != null
+            return snapshot.connectionState == ConnectionState.done &&
+                    snapshot.data != null
                 ? Container(
                     child: ListView.builder(
-                      itemCount: snapshot.data.length,
-                        itemBuilder: (context, index) =>
-                            Card(
+                        itemCount: snapshot.data.length,
+                        itemBuilder: (context, index) => Card(
                               child: ListTile(
-                                title: Center(child: Text('${snapshot.data[index].body}')),
-                                subtitle: Text('${snapshot.data[index].tags}'),
+                                title: Center(
+                                    child:
+                                        Text('${snapshot.data[index].body}')),
+                                subtitle: Text('${snapshot.data[index].title}'),
                               ),
                             )),
                   )
                 : Container(
-              child: Center(child: CircularProgressIndicator(),),
-            );
+                    child: Center(
+                      child: CircularProgressIndicator(),
+                    ),
+                  );
           }),
     );
   }
