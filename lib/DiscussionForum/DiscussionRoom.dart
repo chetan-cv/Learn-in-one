@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:googleapis/adsense/v1_4.dart';
+import 'package:learninone/DiscussionForum/Widgets.dart';
 import 'classroomModel.dart';
 import 'discussionForumBackend.dart';
 
@@ -60,7 +61,6 @@ class DiscussionRoomState extends State<DiscussionRoom> {
                                 child: TextFormField(
                                   key: _formKey,
                                   controller: _question,
-                                  maxLines: 4,
                                 ),
                               ),
                             ),
@@ -113,12 +113,7 @@ class DiscussionRoomState extends State<DiscussionRoom> {
                     child: ListView.builder(
                         itemCount: snapshot.data.length,
                         itemBuilder: (context, index) => Card(
-                              child: ListTile(
-                                title: Center(
-                                    child:
-                                        Text('${snapshot.data[index].body}')),
-                                subtitle: Text('${snapshot.data[index].title}'),
-                              ),
+                              child: QuestionTile(snapshot, index)
                             )),
                   )
                 : Container(

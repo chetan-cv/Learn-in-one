@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:googleapis/classroom/v1.dart';
 import 'package:learninone/Widgets/widgets.dart';
-import 'file:///D:/projects/flutter/Learn-in-one/lib/Classroom/classroomBackend.dart';
+import 'classroomBackend.dart';
 
 class Classroom extends StatefulWidget {
   String accessToken;

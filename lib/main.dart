@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'file:///D:/projects/flutter/Learn-in-one/lib/Classroom/classroom.dart';
-import 'file:///D:/projects/flutter/Learn-in-one/lib/DiscussionForum/discussionForum.dart';
+import 'Classroom/classroom.dart';
+import 'DiscussionForum/discussionForum.dart';
 import 'Widgets/widgets.dart';
 
 List<String> assignments = ['1', '2', '3', '4', '5', '6'];
