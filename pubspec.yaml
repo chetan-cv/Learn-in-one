@@ -26,6 +26,9 @@ dependencies:
   flutter_secure_storage: ^3.3.3
   oauth2: ^1.6.1
   cached_network_image: ^2.2.0+1
+  firebase_storage: ^3.1.6
+  firebase: ^7.3.0
+  file_picker: ^1.12.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -45,4 +48,6 @@ flutter:
     - family: Yellowtail
       fonts:
         - asset: fonts/Yellowtail-Regular.ttf
-          
+    - family: Oswald
+      fonts:
+        - asset: fonts/Oswald-VariableFont_wght.ttf

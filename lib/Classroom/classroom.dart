@@ -27,7 +27,7 @@ class ClassroomState extends State<Classroom> {
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
                   'My Classrooms',
-                  style: TextStyle(fontSize: 30.0),
+                  style: TextStyle(fontSize: 40.0,fontFamily: 'Yellowtail',color: Colors.blue),
                 ),
               ),
               Container(
@@ -51,13 +51,16 @@ class ClassroomState extends State<Classroom> {
                                               Padding(
                                                 padding:
                                                     const EdgeInsets.all(8.0),
-                                                child: HomePageCard(
+                                                child:ClassroomCard(
                                                   imageUrl:
                                                       "https://www.revolutioninter.net/wp-content/uploads/2018/09/undraw_blogging_vpvv.png",
-                                                  itemName:
+                                                  subjectName:
                                                       "${snapshot.data[index].name}",
-//                        Width: 300,
+//                        Width: 300,       
                                                   Height: 200,
+                                                  Width: double.infinity,
+                                                  sectionName: "${snapshot.data[index].section}",
+                                                  description: "${snapshot.data[index].description}",
                                                 ),
                                               ),
                                               SizedBox(height: 20),

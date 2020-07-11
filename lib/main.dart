@@ -3,6 +3,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'Classroom/classroom.dart';
 import 'DiscussionForum/discussionForum.dart';
+import 'Econtent/econtent.dart';
 import 'Widgets/widgets.dart';
 
 List<String> assignments = ['1', '2', '3', '4', '5', '6'];
@@ -73,32 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               fontSize: 20, fontWeight: FontWeight.bold),
                         )),
                     SizedBox(height: 20),
-                    Container(
-                      color: Colors.grey[200],
-                      padding: EdgeInsets.symmetric(horizontal: 10),
-                      height: 70,
-                      child: ListView.builder(
-                          shrinkWrap: true,
-                          itemCount: assignments.length,
-                          scrollDirection: Axis.horizontal,
-                          itemBuilder: (BuildContext ctxt, int index) {
-                            return Container(
-                              width: 100,
-                              child: Card(
-                                color: Colors.blue,
-                                elevation: 1.5,
-                                child: Center(
-                                  child: Text(
-                                    assignments[index],
-                                    style: TextStyle(
-                                        fontSize: 30,
-                                        fontWeight: FontWeight.w500),
-                                  ),
-                                ),
-                              ),
-                            );
-                          }),
-                    ),
+                    TaskList(assignments: assignments),
                     SizedBox(
                       height: 30,
                     ),
@@ -110,7 +86,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                   ? Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => Classroom(snapshot.data)))
+                                          builder: (context) =>
+                                              Classroom(snapshot.data)))
                                   : await showDialog(
                                       context: context,
                                       builder: (context) => AlertDialog(
@@ -148,12 +125,18 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ),
                     SizedBox(height: 30),
-                    HomePageCard(
-                      imageUrl:
-                          "https://image.freepik.com/free-vector/online-news_23-2147509495.jpg",
-                      itemName: "E-Content",
-                      Width: 300,
-                      Height: 200,
+                    GestureDetector(
+                      onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => EcontentPage())),
+                      child: HomePageCard(
+                        imageUrl:
+                            "https://image.freepik.com/free-vector/online-news_23-2147509495.jpg",
+                        itemName: "E-Content",
+                        Width: 300,
+                        Height: 200,
+                      ),
                     ),
                   ],
                 ),
