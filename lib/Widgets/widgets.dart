@@ -5,9 +5,17 @@ import 'package:cached_network_image/cached_network_image.dart';
 class ClassroomCard extends StatelessWidget {
   final String imageUrl;
   final String subjectName;
+  final String description;
   final double Width;
   final double Height;
-  ClassroomCard({this.imageUrl, this.subjectName, this.Width, this.Height});
+  final String sectionName;
+  ClassroomCard(
+      {this.imageUrl,
+      this.subjectName,
+      this.Width,
+      this.Height,
+      this.sectionName,
+      this.description});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -21,16 +29,37 @@ class ClassroomCard extends StatelessWidget {
             Width: Width,
           ),
           SizedBox(height: 25),
-          Align(
-            alignment: Alignment.bottomLeft,
-            child: Text(
-              "X-D",
-              style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.w500,
-                  fontSize: 30),
-            ),
-          )
+          Row(
+            children: <Widget>[
+              SizedBox(width: 15),
+              Align(
+                alignment: Alignment.bottomLeft,
+                child: Text(
+                  sectionName,
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 30),
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 5),
+          Row(
+            children: <Widget>[
+              SizedBox(width: 15),
+              Align(
+                alignment: Alignment.bottomLeft,
+                child: Text(
+                  description,
+                  style: TextStyle(
+                      color: Colors.grey,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 18.5),
+                ),
+              ),
+            ],
+          ),
         ],
       )),
     );
@@ -55,21 +84,68 @@ class ImageWithText extends StatelessWidget {
           ),
         ),
         Container(
-          width: Width,
-          height: Height,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(6), color: Colors.black26),
-          child: Align(
-            alignment: Alignment.bottomLeft,
-            child: Text(
-              subjectName,
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 25,
-                  fontWeight: FontWeight.w500),
-            ),
+            width: Width,
+            height: Height,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(6), color: Colors.black26),
+            child: Row(
+              children: <Widget>[
+                SizedBox(width: 15),
+                Align(
+                  alignment: Alignment.bottomLeft,
+                  child: Text(
+                    subjectName,
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 25,
+                        fontWeight: FontWeight.w500),
+                  ),
+                ),
+              ],
+            ))
+      ],
+    );
+  }
+}
+
+class DiscussionTile extends StatelessWidget {
+  final String imageUrl, subjectName;
+  final double Width, Height;
+  DiscussionTile({this.imageUrl, this.subjectName, this.Height, this.Width});
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: <Widget>[
+        ClipRRect(
+          borderRadius: BorderRadius.circular(6),
+          child: CachedNetworkImage(
+            imageUrl: imageUrl,
+            fit: BoxFit.cover,
+            width: Width,
+            height: Height,
           ),
-        )
+        ),
+        Container(
+            width: Width,
+            height: Height,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(6), color: Colors.black54),
+            child: Row(
+              children: <Widget>[
+                SizedBox(width: 15),
+                Align(
+                  alignment: Alignment.center,
+                  child: Text(
+                    subjectName,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500),
+                  ),
+                ),
+              ],
+            ))
       ],
     );
   }
@@ -84,7 +160,7 @@ class HomePageCard extends StatelessWidget {
     return GestureDetector(
       child: Align(
         alignment: Alignment.center,
-              child: Stack(
+        child: Stack(
           children: <Widget>[
             ClipRRect(
               borderRadius: BorderRadius.circular(6),
@@ -99,7 +175,8 @@ class HomePageCard extends StatelessWidget {
               width: Width,
               height: Height,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(6), color: Colors.black26),
+                  borderRadius: BorderRadius.circular(6),
+                  color: Colors.black26),
               child: Align(
                 alignment: Alignment.center,
                 child: Text(
@@ -118,3 +195,34 @@ class HomePageCard extends StatelessWidget {
   }
 }
 
+class TaskList extends StatelessWidget {
+  final List<String> assignments;
+  TaskList({this.assignments});
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.grey[200],
+      padding: EdgeInsets.symmetric(horizontal: 10),
+      height: 70,
+      child: ListView.builder(
+          shrinkWrap: true,
+          itemCount: assignments.length,
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (BuildContext ctxt, int index) {
+            return Container(
+              width: 100,
+              child: Card(
+                color: Colors.blue,
+                elevation: 1.5,
+                child: Center(
+                  child: Text(
+                    assignments[index],
+                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.w500),
+                  ),
+                ),
+              ),
+            );
+          }),
+    );
+  }
+}

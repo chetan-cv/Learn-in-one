@@ -73,32 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               fontSize: 20, fontWeight: FontWeight.bold),
                         )),
                     SizedBox(height: 20),
-                    Container(
-                      color: Colors.grey[200],
-                      padding: EdgeInsets.symmetric(horizontal: 10),
-                      height: 70,
-                      child: ListView.builder(
-                          shrinkWrap: true,
-                          itemCount: assignments.length,
-                          scrollDirection: Axis.horizontal,
-                          itemBuilder: (BuildContext ctxt, int index) {
-                            return Container(
-                              width: 100,
-                              child: Card(
-                                color: Colors.blue,
-                                elevation: 1.5,
-                                child: Center(
-                                  child: Text(
-                                    assignments[index],
-                                    style: TextStyle(
-                                        fontSize: 30,
-                                        fontWeight: FontWeight.w500),
-                                  ),
-                                ),
-                              ),
-                            );
-                          }),
-                    ),
+                    TaskList(assignments: assignments),
                     SizedBox(
                       height: 30,
                     ),
@@ -110,7 +85,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                   ? Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => Classroom(snapshot.data)))
+                                          builder: (context) =>
+                                              Classroom(snapshot.data)))
                                   : await showDialog(
                                       context: context,
                                       builder: (context) => AlertDialog(
