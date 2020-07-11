@@ -113,7 +113,7 @@ class DiscussionRoomState extends State<DiscussionRoom> {
                     child: ListView.builder(
                         itemCount: snapshot.data.length,
                         itemBuilder: (context, index) => Card(
-                              child: QuestionTile(snapshot, index)
+                              child: QuestionTile(snapshot, index, context)
                             )),
                   )
                 : Container(

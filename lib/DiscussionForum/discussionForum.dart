@@ -148,7 +148,7 @@ class DiscussionForumState extends State<DiscussionForum> {
                                                 itemBuilder: (context, index) {
                                                   return Card(
                                                       child: QuestionTile(
-                                                          snapshot, index));
+                                                          snapshot, index, context));
                                                 }),
                                           )
                                         : Container(

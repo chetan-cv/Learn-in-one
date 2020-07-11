@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:http/http.dart' as http;
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'classroomModel.dart';
@@ -11,8 +10,8 @@ Future<http.Response> postingQuestion(String title, String question) async {
 
   return await http.post('https://learninone.herokuapp.com/post/list/', body: {
     "title": title,
-    "postType": "AI",
-    "parentId": "None",
+//    "postType": "AI",
+//    "parentId": "None",
     "creationDate": DateTime.now().toIso8601String(),
     "body": question,
     "author": author,
