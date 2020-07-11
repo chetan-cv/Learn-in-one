@@ -3,6 +3,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'Classroom/classroom.dart';
 import 'DiscussionForum/discussionForum.dart';
+import 'Econtent/econtent.dart';
 import 'Widgets/widgets.dart';
 
 List<String> assignments = ['1', '2', '3', '4', '5', '6'];
@@ -124,12 +125,18 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ),
                     SizedBox(height: 30),
-                    HomePageCard(
-                      imageUrl:
-                          "https://image.freepik.com/free-vector/online-news_23-2147509495.jpg",
-                      itemName: "E-Content",
-                      Width: 300,
-                      Height: 200,
+                    GestureDetector(
+                      onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => EcontentPage())),
+                      child: HomePageCard(
+                        imageUrl:
+                            "https://image.freepik.com/free-vector/online-news_23-2147509495.jpg",
+                        itemName: "E-Content",
+                        Width: 300,
+                        Height: 200,
+                      ),
                     ),
                   ],
                 ),

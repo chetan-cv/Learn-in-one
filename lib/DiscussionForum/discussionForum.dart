@@ -60,7 +60,7 @@ class DiscussionForumState extends State<DiscussionForum> {
               child: Container(
                 child: Text(
                   'Discussion Forum',
-                  style: TextStyle(fontSize: 30.0),
+                  style: TextStyle(fontSize: 40.0,color: Colors.blue,fontFamily: 'Yellowtail',),
                 ),
               ),
             ),
@@ -155,8 +155,8 @@ class DiscussionForumState extends State<DiscussionForum> {
                                                 child: DiscussionTile(
                                                   imageUrl: urls[index],
                                                   subjectName: tags[index],
-                                                  Height: 100,
-                                                  Width: 150,
+                                                  Height: 250,
+                                                  Width: 300,
                                                 ),
                                               ),
                                             ),
