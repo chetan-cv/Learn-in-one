@@ -1,5 +1,9 @@
+import 'dart:io';
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:learninone/Widgets/widgets.dart';
+import 'package:firebase_storage/firebase_storage.dart';
+import 'package:path/path.dart' as path;
 
 class EcontentPage extends StatefulWidget {
   @override
@@ -7,15 +11,105 @@ class EcontentPage extends StatefulWidget {
 }
 
 class _EcontentPageState extends State<EcontentPage> {
+  File sampleFile;
+  bool fileUploaded=false;
+  Future getFile() async {
+    var tempFile = await FilePicker.getFile();
+    setState(() {
+      sampleFile = tempFile;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Center(child: Text("E-Content",style: TextStyle(color:Colors.blue,fontSize: 40,fontFamily: 'Yellowtail'),)),
-        backgroundColor: Colors.white,
-        elevation: 0.0,
+    return SafeArea(
+      child: Scaffold(
+        floatingActionButton: FloatingActionButton(
+          onPressed: () => getFile(),
+          child: Icon(Icons.cloud_upload),
+        ),
+        body: Column(children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              child: Center(
+                child: Text(
+                  'E-Content',
+                  style: TextStyle(
+                    fontSize: 40.0,
+                    color: Colors.blue,
+                    fontFamily: 'Yellowtail',
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Center(
+              child: Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: fileUploaded==false?sampleFile == null
+                      ? Text("Please upload a image")
+                      : choiceWidget(): Text("File ${path.basenameWithoutExtension(sampleFile.path).toString()} uploaded successfully")
+                      )
+                      )
+        ]),
       ),
     );
+  }
 
+  Widget choiceWidget() {
+    return SimpleDialog(
+      children: <Widget>[
+        Padding(
+          padding: EdgeInsets.only(left: 8, right: 8),
+          child: Text(
+            path.basenameWithoutExtension(sampleFile.path).toString(),
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+          ),
+        ),
+        SizedBox(
+          height: 20,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            RaisedButton(
+              onPressed: () async {
+                final StorageReference firebaseStorageRef =
+                    FirebaseStorage.instance.ref().child(path
+                        .basenameWithoutExtension(sampleFile.path)
+                        .toString());
+                final StorageUploadTask task =
+                    firebaseStorageRef.putFile(sampleFile);
+                  setState(() {
+                    fileUploaded=true;
+                  });
+              },
+              child: Center(
+                  child: Icon(
+                Icons.cloud_upload,
+                size: 40,
+              )),
+              color: Colors.blue,
+            ),
+            SizedBox(width: 40),
+            RaisedButton(
+              onPressed: () {
+                setState(() {
+                  sampleFile = null;
+                });
+              },
+              child: Center(
+                  child: Icon(
+                Icons.delete,
+                size: 40,
+              )),
+              color: Colors.blue,
+              splashColor: Colors.white,
+            ),
+          ],
+        )
+      ],
+    );
   }
 }

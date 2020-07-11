@@ -5,13 +5,15 @@ INJECTED from C:\Users\Arjun\Desktop\Learn-in-one\android\app\src\main\AndroidMa
 INJECTED from C:\Users\Arjun\Desktop\Learn-in-one\android\app\src\main\AndroidManifest.xml:1:1-30:12
 INJECTED from C:\Users\Arjun\Desktop\Learn-in-one\android\app\src\main\AndroidManifest.xml:1:1-30:12
 MERGED from C:\Users\Arjun\Desktop\Learn-in-one\android\app\src\main\AndroidManifest.xml:1:1-30:12
+MERGED from [:flutter_secure_storage] C:\Users\Arjun\Desktop\Learn-in-one\build\flutter_secure_storage\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:file_picker] C:\Users\Arjun\Desktop\Learn-in-one\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:google_sign_in] C:\Users\Arjun\Desktop\Learn-in-one\build\google_sign_in\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:firebase_storage] C:\Users\Arjun\Desktop\Learn-in-one\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
 MERGED from [:firebase_core] C:\Users\Arjun\Desktop\Learn-in-one\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
 MERGED from [:firebase_core_web] C:\Users\Arjun\Desktop\Learn-in-one\build\firebase_core_web\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
-MERGED from [:flutter_secure_storage] C:\Users\Arjun\Desktop\Learn-in-one\build\flutter_secure_storage\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [:sqflite] C:\Users\Arjun\Desktop\Learn-in-one\build\sqflite\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
+MERGED from [:flutter_plugin_android_lifecycle] C:\Users\Arjun\Desktop\Learn-in-one\build\flutter_plugin_android_lifecycle\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:path_provider] C:\Users\Arjun\Desktop\Learn-in-one\build\path_provider\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
-MERGED from [:google_sign_in] C:\Users\Arjun\Desktop\Learn-in-one\build\google_sign_in\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\11fd3627fe134ad3aae3012ae0202227\jetified-play-services-auth-16.0.1\AndroidManifest.xml:17:1-39:12
 MERGED from [com.google.android.gms:play-services-auth-api-phone:16.0.0] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\06cfe2b56071321407bea0c8388399f7\jetified-play-services-auth-api-phone-16.0.0\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.gms:play-services-auth-base:16.0.0] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\917ccceb906aece23f69f7fe6a59646b\jetified-play-services-auth-base-16.0.0\AndroidManifest.xml:2:1-7:12
@@ -23,11 +25,11 @@ MERGED from [com.google.android.gms:play-services-tasks:16.0.1] C:\Users\Arjun\.
 MERGED from [com.google.android.gms:play-services-basement:16.1.0] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\34c759aab64b3340f66957b8545cd406\jetified-play-services-basement-16.1.0\AndroidManifest.xml:17:1-28:12
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\fb1e5d35f9738a7c29a273d7be7f3e2c\legacy-support-v4-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\0d479d426be2ba1f4bdfee2f9a7aa519\fragment-1.1.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.activity:activity:1.0.0] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\5a1de8d3594afca67ad230d5d25a73b9\activity-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\536c4d230adcf87aec8f00c8955f8127\legacy-support-core-ui-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\4881302d1430cfdcaa10344523e2ce7f\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\d10fe1176fa5480b064486ece15f99c1\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\28c8df72e3e98cf2af337943db219b6d\loader-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.0.0] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\5a1de8d3594afca67ad230d5d25a73b9\activity-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\d255798b3263f4a3c8e304b7de4de531\coordinatorlayout-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\6af37b0dc18acadfaf8b0344ec157d66\drawerlayout-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\3008a15222323dd0393f3314747b2d3a\slidingpanelayout-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -131,20 +133,24 @@ uses-sdk
 INJECTED from C:\Users\Arjun\Desktop\Learn-in-one\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Arjun\Desktop\Learn-in-one\android\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\Arjun\Desktop\Learn-in-one\android\app\src\main\AndroidManifest.xml
+MERGED from [:flutter_secure_storage] C:\Users\Arjun\Desktop\Learn-in-one\build\flutter_secure_storage\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:flutter_secure_storage] C:\Users\Arjun\Desktop\Learn-in-one\build\flutter_secure_storage\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:file_picker] C:\Users\Arjun\Desktop\Learn-in-one\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:file_picker] C:\Users\Arjun\Desktop\Learn-in-one\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:google_sign_in] C:\Users\Arjun\Desktop\Learn-in-one\build\google_sign_in\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:google_sign_in] C:\Users\Arjun\Desktop\Learn-in-one\build\google_sign_in\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:firebase_storage] C:\Users\Arjun\Desktop\Learn-in-one\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:firebase_storage] C:\Users\Arjun\Desktop\Learn-in-one\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:firebase_core] C:\Users\Arjun\Desktop\Learn-in-one\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:firebase_core] C:\Users\Arjun\Desktop\Learn-in-one\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:firebase_core_web] C:\Users\Arjun\Desktop\Learn-in-one\build\firebase_core_web\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:firebase_core_web] C:\Users\Arjun\Desktop\Learn-in-one\build\firebase_core_web\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [:flutter_secure_storage] C:\Users\Arjun\Desktop\Learn-in-one\build\flutter_secure_storage\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:flutter_secure_storage] C:\Users\Arjun\Desktop\Learn-in-one\build\flutter_secure_storage\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [:sqflite] C:\Users\Arjun\Desktop\Learn-in-one\build\sqflite\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:sqflite] C:\Users\Arjun\Desktop\Learn-in-one\build\sqflite\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:flutter_plugin_android_lifecycle] C:\Users\Arjun\Desktop\Learn-in-one\build\flutter_plugin_android_lifecycle\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:flutter_plugin_android_lifecycle] C:\Users\Arjun\Desktop\Learn-in-one\build\flutter_plugin_android_lifecycle\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:path_provider] C:\Users\Arjun\Desktop\Learn-in-one\build\path_provider\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:path_provider] C:\Users\Arjun\Desktop\Learn-in-one\build\path_provider\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [:google_sign_in] C:\Users\Arjun\Desktop\Learn-in-one\build\google_sign_in\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [:google_sign_in] C:\Users\Arjun\Desktop\Learn-in-one\build\google_sign_in\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\11fd3627fe134ad3aae3012ae0202227\jetified-play-services-auth-16.0.1\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-auth:16.0.1] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\11fd3627fe134ad3aae3012ae0202227\jetified-play-services-auth-16.0.1\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-auth-api-phone:16.0.0] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\06cfe2b56071321407bea0c8388399f7\jetified-play-services-auth-api-phone-16.0.0\AndroidManifest.xml:5:5-44
@@ -167,8 +173,6 @@ MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\Arjun\.gradle\cac
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\fb1e5d35f9738a7c29a273d7be7f3e2c\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\0d479d426be2ba1f4bdfee2f9a7aa519\fragment-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\0d479d426be2ba1f4bdfee2f9a7aa519\fragment-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.activity:activity:1.0.0] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\5a1de8d3594afca67ad230d5d25a73b9\activity-1.0.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.activity:activity:1.0.0] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\5a1de8d3594afca67ad230d5d25a73b9\activity-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\536c4d230adcf87aec8f00c8955f8127\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\536c4d230adcf87aec8f00c8955f8127\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\4881302d1430cfdcaa10344523e2ce7f\viewpager-1.0.0\AndroidManifest.xml:20:5-44
@@ -177,6 +181,8 @@ MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Arjun\.gr
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\d10fe1176fa5480b064486ece15f99c1\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\28c8df72e3e98cf2af337943db219b6d\loader-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\28c8df72e3e98cf2af337943db219b6d\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.0.0] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\5a1de8d3594afca67ad230d5d25a73b9\activity-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\5a1de8d3594afca67ad230d5d25a73b9\activity-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\d255798b3263f4a3c8e304b7de4de531\coordinatorlayout-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\d255798b3263f4a3c8e304b7de4de531\coordinatorlayout-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\6af37b0dc18acadfaf8b0344ec157d66\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
@@ -233,6 +239,10 @@ MERGED from [com.google.firebase:firebase-storage:17.0.0] C:\Users\Arjun\.gradle
 MERGED from [com.google.firebase:firebase-storage:17.0.0] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\563bc192697073ff915157f6dce1e0e7\jetified-firebase-storage-17.0.0\AndroidManifest.xml:27:5-67
 	android:name
 		ADDED from C:\Users\Arjun\Desktop\Learn-in-one\android\app\src\debug\AndroidManifest.xml:6:22-64
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from [:file_picker] C:\Users\Arjun\Desktop\Learn-in-one\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-80
+	android:name
+		ADDED from [:file_picker] C:\Users\Arjun\Desktop\Learn-in-one\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:22-77
 service#com.google.firebase.components.ComponentDiscoveryService
 ADDED from [:firebase_storage] C:\Users\Arjun\Desktop\Learn-in-one\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
 MERGED from [:firebase_core] C:\Users\Arjun\Desktop\Learn-in-one\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19

@@ -1,7 +1,9 @@
 # This is a generated file; do not edit or check into version control.
+file_picker=C:\\flutter\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\file_picker-1.12.0\\
 firebase_core=C:\\flutter\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\firebase_core-0.4.5\\
 firebase_core_web=C:\\flutter\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\firebase_core_web-0.1.1+2\\
 firebase_storage=C:\\flutter\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\firebase_storage-3.1.6\\
+flutter_plugin_android_lifecycle=C:\\flutter\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\flutter_plugin_android_lifecycle-1.0.8\\
 flutter_secure_storage=C:\\flutter\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\flutter_secure_storage-3.3.3\\
 google_sign_in=C:\\flutter\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\google_sign_in-4.5.1\\
 google_sign_in_web=C:\\flutter\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\google_sign_in_web-0.9.1+1\\

@@ -14,7 +14,9 @@
 14    <uses-permission android:name="android.permission.INTERNET" />
 14-->C:\Users\Arjun\Desktop\Learn-in-one\android\app\src\debug\AndroidManifest.xml:6:5-66
 14-->C:\Users\Arjun\Desktop\Learn-in-one\android\app\src\debug\AndroidManifest.xml:6:22-64
-15    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
+15    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
+15-->[:file_picker] C:\Users\Arjun\Desktop\Learn-in-one\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-80
+15-->[:file_picker] C:\Users\Arjun\Desktop\Learn-in-one\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:22-77
 16    <!-- <uses-sdk android:minSdkVersion="14"/> -->
 17    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 17-->[com.google.firebase:firebase-storage:17.0.0] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\563bc192697073ff915157f6dce1e0e7\jetified-firebase-storage-17.0.0\AndroidManifest.xml:26:5-79
