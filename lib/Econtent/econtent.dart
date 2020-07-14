@@ -12,7 +12,7 @@ class EcontentPage extends StatefulWidget {
 
 class _EcontentPageState extends State<EcontentPage> {
   File sampleFile;
-  bool fileUploaded=false;
+  bool fileUploaded = false;
   Future getFile() async {
     var tempFile = await FilePicker.getFile();
     setState(() {
@@ -47,11 +47,12 @@ class _EcontentPageState extends State<EcontentPage> {
           Center(
               child: Padding(
                   padding: EdgeInsets.all(8.0),
-                  child: fileUploaded==false?sampleFile == null
-                      ? Text("Please upload a image")
-                      : choiceWidget(): Text("File ${path.basenameWithoutExtension(sampleFile.path).toString()} uploaded successfully")
-                      )
-                      )
+                  child: fileUploaded == false
+                      ? sampleFile == null
+                          ? Text("Please upload a image")
+                          : choiceWidget()
+                      : Text(
+                          "File ${path.basenameWithoutExtension(sampleFile.path).toString()} uploaded successfully")))
         ]),
       ),
     );
@@ -74,6 +75,9 @@ class _EcontentPageState extends State<EcontentPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             RaisedButton(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(50.0),
+                  side: BorderSide(color: Colors.green)),
               onPressed: () async {
                 final StorageReference firebaseStorageRef =
                     FirebaseStorage.instance.ref().child(path
@@ -81,19 +85,22 @@ class _EcontentPageState extends State<EcontentPage> {
                         .toString());
                 final StorageUploadTask task =
                     firebaseStorageRef.putFile(sampleFile);
-                  setState(() {
-                    fileUploaded=true;
-                  });
+                setState(() {
+                  fileUploaded = true;
+                });
               },
               child: Center(
                   child: Icon(
                 Icons.cloud_upload,
                 size: 40,
               )),
-              color: Colors.blue,
+              color: Colors.green,
             ),
             SizedBox(width: 40),
             RaisedButton(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(50.0),
+                  side: BorderSide(color: Colors.red)),
               onPressed: () {
                 setState(() {
                   sampleFile = null;
@@ -104,7 +111,7 @@ class _EcontentPageState extends State<EcontentPage> {
                 Icons.delete,
                 size: 40,
               )),
-              color: Colors.blue,
+              color: Colors.red,
               splashColor: Colors.white,
             ),
           ],
