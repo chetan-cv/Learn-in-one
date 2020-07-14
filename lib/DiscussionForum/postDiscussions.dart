@@ -25,82 +25,87 @@ class PostDiscussionsState extends State<PostDiscussions> {
     // TODO: implement build
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.file_upload),
+          child: Icon(Icons.file_upload),
           onPressed: () async {
-          await showDialog(
-            context: context,
-            builder: (context) => Dialog(
-                  child: Container(
-                    padding: EdgeInsets.all(5.0),
-                    height: 300.0,
-                    width: 200.0,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Text(
-                          'Enter your Question',
-                          style: TextStyle(fontSize: 20),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Container(
-                            decoration: BoxDecoration(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(10.0)),
-                                border:
-                                    Border.all(width: 1.0, color: Colors.blue)),
-                            child: TextFormField(
-                              controller: _messageTextController,
+            await showDialog(
+                context: context,
+                builder: (context) => Dialog(
+                      child: Container(
+                        padding: EdgeInsets.all(5.0),
+                        height: 300.0,
+                        width: 200.0,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Text(
+                              'Enter your Question',
+                              style: TextStyle(fontSize: 20),
                             ),
-                          ),
-                        ),
-                        RaisedButton(
-                            color: Colors.blue,
-                            child: Text(
-                              'Submit',
-                              style: TextStyle(color: Colors.white),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10.0)),
+                                    border: Border.all(
+                                        width: 1.0, color: Colors.blue)),
+                                child: TextFormField(
+                                  controller: _messageTextController,
+                                ),
+                              ),
                             ),
-                            onPressed: () async => _messageTextController
-                                        .text !=
-                                    ''
-                                ? await uploadingComment(widget.post.id,
-                                        _messageTextController.text)
-                                    .then((value) {
-                                    if (value.statusCode >= 200 &&
-                                        value.statusCode < 400) {
-                                      showDialog(
-                                          context: context,
-                                          builder: (context) => AlertDialog(
-                                                title:
-                                                    Text('Comment submitted!'),
-                                              ));
-                                      setState(() {
-
-                                      });
-                                    } else {
-                                      showDialog(
-                                          context: context,
-                                          builder: (context) => AlertDialog(
-                                                title: Text(
-                                                    'Something went wrong'),
-                                              ));
-                                    }
-                                  })
-                                : showDialog(
-                                    context: context,
-                                    builder: (context) => AlertDialog(
-                                          title: Text('Please enter question'),
-                                        )))
-                      ],
-                    ),
-                  ),
-                )).whenComplete(() {
-            setState(() {
-
+                            RaisedButton(
+                                color: Colors.blue,
+                                child: Text(
+                                  'Submit',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                                onPressed: () async => _messageTextController
+                                            .text !=
+                                        ''
+                                    ? await uploadingComment(widget.post.id,
+                                            _messageTextController.text)
+                                        .then((value) {
+                                        showDialog(
+                                            context: context,
+                                            builder: (context) => AlertDialog(
+                                                  title: Center(
+                                                    child:
+                                                        CircularProgressIndicator(),
+                                                  ),
+                                                ));
+                                        if (value.statusCode >= 200 &&
+                                            value.statusCode < 400) {
+                                          Navigator.of(context).pop();
+                                          showDialog(
+                                              context: context,
+                                              builder: (context) => AlertDialog(
+                                                    title: Text(
+                                                        'Comment submitted!'),
+                                                  ));
+                                          setState(() {});
+                                        } else {
+                                          showDialog(
+                                              context: context,
+                                              builder: (context) => AlertDialog(
+                                                    title: Text(
+                                                        'Something went wrong'),
+                                                  ));
+                                        }
+                                      })
+                                    : showDialog(
+                                        context: context,
+                                        builder: (context) => AlertDialog(
+                                              title:
+                                                  Text('Please enter question'),
+                                            )))
+                          ],
+                        ),
+                      ),
+                    )).whenComplete(() {
+              setState(() {});
             });
-          });
-
-      }),
+          }),
       body: ListView(
         children: <Widget>[
           ListTile(
@@ -154,7 +159,7 @@ class PostDiscussionsState extends State<PostDiscussions> {
                 return Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Container(
-                      height: MediaQuery.of(context).size.height,
+                    height: MediaQuery.of(context).size.height,
                     child: Column(
                       children: <Widget>[
                         Padding(
@@ -169,26 +174,25 @@ class PostDiscussionsState extends State<PostDiscussions> {
                         Container(
                           height: 30.0,
                         ),
-                        snapshot.connectionState ==
-                            ConnectionState.done
+                        snapshot.connectionState == ConnectionState.done
                             ? snapshot.data != null
-                            ? Expanded(
-                          child: ListView.builder(
-                              itemCount: snapshot.data.length,
-                              itemBuilder: (context, index) {
-                                return Card(
-                                    child: CommentTile(
-                                        snapshot, index, context));
-                              }),
-                        )
+                                ? Expanded(
+                                    child: ListView.builder(
+                                        itemCount: snapshot.data.length,
+                                        itemBuilder: (context, index) {
+                                          return Card(
+                                              child: CommentTile(
+                                                  snapshot, index, context));
+                                        }),
+                                  )
+                                : Container(
+                                    child: Text('no results found'),
+                                  )
                             : Container(
-                          child: Text('no results found'),
-                        )
-                            : Container(
-                          child: Center(
-                            child: CircularProgressIndicator(),
-                          ),
-                        ),
+                                child: Center(
+                                  child: CircularProgressIndicator(),
+                                ),
+                              ),
                       ],
                     ),
                   ),

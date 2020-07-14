@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:learninone/DiscussionForum/CommentsModel.dart';
 import 'package:learninone/DiscussionForum/classroomModel.dart';
+import 'package:learninone/DiscussionForum/discussionForumBackend.dart';
 import 'package:learninone/DiscussionForum/postDiscussions.dart';
 
 Widget QuestionTile(AsyncSnapshot<List<DiscussionModel>> snapshot, int index,
@@ -43,14 +44,19 @@ Widget QuestionTile(AsyncSnapshot<List<DiscussionModel>> snapshot, int index,
             ),
           ),
         ),
-        Container(
-          width: 50.0,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              Icon(Icons.add_box),
-              Text('${snapshot.data[index].score}'),
-            ],
+        GestureDetector(
+          onTap: () => likingPost(snapshot.data[index])
+              .whenComplete(
+              () => context.findAncestorStateOfType().setState(() {})),
+          child: Container(
+            width: 50.0,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Icon(Icons.add_box, size: 30.0,),
+                Text('${snapshot.data[index].score}'),
+              ],
+            ),
           ),
         ),
       ],

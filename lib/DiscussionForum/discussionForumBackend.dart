@@ -57,3 +57,15 @@ Future<List<DiscussionModel>> gettingDiscussion(String title) async {
     print(error);
   });
 }
+
+Future<void> likingPost(DiscussionModel post) async {
+  print('hello');
+  int score = int.parse(post.score) + 1;
+  await http.put(
+    Uri.encodeFull('https://learninone.herokuapp.com/post/list/${post.id}/'),
+    body: {
+      "score": score.toString()
+    }
+  );
+
+}
