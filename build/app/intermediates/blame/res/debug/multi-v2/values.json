@@ -1,44 +1,8 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Arjun\\Desktop\\Learn-in-one\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "D:\\Learn-in-one\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
-                {
-                    "source": "C:\\Users\\Arjun\\Desktop\\Learn-in-one\\build\\app\\generated\\res\\google-services\\debug\\values\\values.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,199,320,402,506,615,735,845",
-                        "endColumns": "143,120,81,103,108,119,109,86",
-                        "endOffsets": "194,315,397,501,610,730,840,927"
-                    },
-                    "to": {
-                        "startLines": "113,114,115,116,117,118,119,120",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "8296,8440,8561,8643,8747,8856,8976,9086",
-                        "endColumns": "143,120,81,103,108,119,109,86",
-                        "endOffsets": "8435,8556,8638,8742,8851,8971,9081,9168"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Arjun\\Desktop\\Learn-in-one\\android\\app\\src\\main\\res\\values\\styles.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "57",
-                        "endLines": "6",
-                        "endColumns": "12",
-                        "endOffsets": "353"
-                    },
-                    "to": {
-                        "startLines": "122",
-                        "startColumns": "4",
-                        "startOffsets": "9244",
-                        "endLines": "126",
-                        "endColumns": "12",
-                        "endOffsets": "9536"
-                    }
-                },
                 {
                     "source": "C:\\Users\\Arjun\\.gradle\\caches\\transforms-2\\files-2.1\\d255798b3263f4a3c8e304b7de4de531\\coordinatorlayout-1.0.0\\res\\values\\values.xml",
                     "from": {
@@ -114,6 +78,25 @@
                     }
                 },
                 {
+                    "source": "D:\\Learn-in-one\\android\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "57",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "353"
+                    },
+                    "to": {
+                        "startLines": "122",
+                        "startColumns": "4",
+                        "startOffsets": "9244",
+                        "endLines": "126",
+                        "endColumns": "12",
+                        "endOffsets": "9536"
+                    }
+                },
+                {
                     "source": "C:\\Users\\Arjun\\.gradle\\caches\\transforms-2\\files-2.1\\34c759aab64b3340f66957b8545cd406\\jetified-play-services-basement-16.1.0\\res\\values\\values.xml",
                     "from": {
                         "startLines": "4,7",
@@ -128,6 +111,23 @@
                         "startOffsets": "5825,7003",
                         "endColumns": "67,166",
                         "endOffsets": "5888,7165"
+                    }
+                },
+                {
+                    "source": "D:\\Learn-in-one\\build\\app\\generated\\res\\google-services\\debug\\values\\values.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,199,320,402,506,615,735,845",
+                        "endColumns": "143,120,81,103,108,119,109,86",
+                        "endOffsets": "194,315,397,501,610,730,840,927"
+                    },
+                    "to": {
+                        "startLines": "113,114,115,116,117,118,119,120",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "8296,8440,8561,8643,8747,8856,8976,9086",
+                        "endColumns": "143,120,81,103,108,119,109,86",
+                        "endOffsets": "8435,8556,8638,8742,8851,8971,9081,9168"
                     }
                 }
             ]
