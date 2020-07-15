@@ -12,100 +12,141 @@
 12         to allow setting breakpoints, to provide hot reload, etc.
 13    -->
 14    <uses-permission android:name="android.permission.INTERNET" />
-14-->/Users/bhavyabansal/Learn-in-one/android/app/src/debug/AndroidManifest.xml:6:5-66
-14-->/Users/bhavyabansal/Learn-in-one/android/app/src/debug/AndroidManifest.xml:6:22-64
-15    <!--
-16     io.flutter.app.FlutterApplication is an android.app.Application that
-17         calls FlutterMain.startInitialization(this); in its onCreate method.
-18         In most cases you can leave this as-is, but you if you want to provide
-19         additional functionality it is fine to subclass or reimplement
-20         FlutterApplication and put your custom class here.
-21    -->
-22    <application
-22-->/Users/bhavyabansal/Learn-in-one/android/app/src/main/AndroidManifest.xml:8:5-29:19
-23        android:name="io.flutter.app.FlutterApplication"
-23-->/Users/bhavyabansal/Learn-in-one/android/app/src/main/AndroidManifest.xml:9:9-57
-24        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-24-->[androidx.core:core:1.0.0] /Users/bhavyabansal/.gradle/caches/transforms-2/files-2.1/c1da7862c7abb8e426855a3f78caf221/core-1.0.0/AndroidManifest.xml:22:18-86
-25        android:debuggable="true"
-26        android:icon="@mipmap/ic_launcher"
-26-->/Users/bhavyabansal/Learn-in-one/android/app/src/main/AndroidManifest.xml:11:9-43
-27        android:label="learninone" >
-27-->/Users/bhavyabansal/Learn-in-one/android/app/src/main/AndroidManifest.xml:10:9-35
-28        <activity
-28-->/Users/bhavyabansal/Learn-in-one/android/app/src/main/AndroidManifest.xml:12:9-23:20
-29            android:name="com.example.learninone.MainActivity"
-29-->/Users/bhavyabansal/Learn-in-one/android/app/src/main/AndroidManifest.xml:13:13-41
-30            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-30-->/Users/bhavyabansal/Learn-in-one/android/app/src/main/AndroidManifest.xml:16:13-163
-31            android:hardwareAccelerated="true"
-31-->/Users/bhavyabansal/Learn-in-one/android/app/src/main/AndroidManifest.xml:17:13-47
-32            android:launchMode="singleTop"
-32-->/Users/bhavyabansal/Learn-in-one/android/app/src/main/AndroidManifest.xml:14:13-43
-33            android:theme="@style/LaunchTheme"
-33-->/Users/bhavyabansal/Learn-in-one/android/app/src/main/AndroidManifest.xml:15:13-47
-34            android:windowSoftInputMode="adjustResize" >
-34-->/Users/bhavyabansal/Learn-in-one/android/app/src/main/AndroidManifest.xml:18:13-55
-35            <intent-filter>
-35-->/Users/bhavyabansal/Learn-in-one/android/app/src/main/AndroidManifest.xml:19:13-22:29
-36                <action android:name="android.intent.action.MAIN" />
-36-->/Users/bhavyabansal/Learn-in-one/android/app/src/main/AndroidManifest.xml:20:17-68
-36-->/Users/bhavyabansal/Learn-in-one/android/app/src/main/AndroidManifest.xml:20:25-66
-37
-38                <category android:name="android.intent.category.LAUNCHER" />
-38-->/Users/bhavyabansal/Learn-in-one/android/app/src/main/AndroidManifest.xml:21:17-76
-38-->/Users/bhavyabansal/Learn-in-one/android/app/src/main/AndroidManifest.xml:21:27-74
-39            </intent-filter>
-40        </activity>
-41        <!--
-42             Don't delete the meta-data below.
-43             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
-44        -->
-45        <meta-data
-45-->/Users/bhavyabansal/Learn-in-one/android/app/src/main/AndroidManifest.xml:26:9-28:33
-46            android:name="flutterEmbedding"
-46-->/Users/bhavyabansal/Learn-in-one/android/app/src/main/AndroidManifest.xml:27:13-44
-47            android:value="2" />
-47-->/Users/bhavyabansal/Learn-in-one/android/app/src/main/AndroidManifest.xml:28:13-30
-48
-49        <activity
-49-->[com.google.android.gms:play-services-auth:16.0.1] /Users/bhavyabansal/.gradle/caches/transforms-2/files-2.1/ea79e59138b4fa157a417461767bcdd0/jetified-play-services-auth-16.0.1/AndroidManifest.xml:23:9-27:75
-50            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-50-->[com.google.android.gms:play-services-auth:16.0.1] /Users/bhavyabansal/.gradle/caches/transforms-2/files-2.1/ea79e59138b4fa157a417461767bcdd0/jetified-play-services-auth-16.0.1/AndroidManifest.xml:24:13-93
-51            android:excludeFromRecents="true"
-51-->[com.google.android.gms:play-services-auth:16.0.1] /Users/bhavyabansal/.gradle/caches/transforms-2/files-2.1/ea79e59138b4fa157a417461767bcdd0/jetified-play-services-auth-16.0.1/AndroidManifest.xml:25:13-46
-52            android:exported="false"
-52-->[com.google.android.gms:play-services-auth:16.0.1] /Users/bhavyabansal/.gradle/caches/transforms-2/files-2.1/ea79e59138b4fa157a417461767bcdd0/jetified-play-services-auth-16.0.1/AndroidManifest.xml:26:13-37
-53            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-53-->[com.google.android.gms:play-services-auth:16.0.1] /Users/bhavyabansal/.gradle/caches/transforms-2/files-2.1/ea79e59138b4fa157a417461767bcdd0/jetified-play-services-auth-16.0.1/AndroidManifest.xml:27:13-72
-54        <!--
-55            Service handling Google Sign-In user revocation. For apps that do not integrate with
-56            Google Sign-In, this service will never be started.
-57        -->
-58        <service
-58-->[com.google.android.gms:play-services-auth:16.0.1] /Users/bhavyabansal/.gradle/caches/transforms-2/files-2.1/ea79e59138b4fa157a417461767bcdd0/jetified-play-services-auth-16.0.1/AndroidManifest.xml:33:9-36:110
-59            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-59-->[com.google.android.gms:play-services-auth:16.0.1] /Users/bhavyabansal/.gradle/caches/transforms-2/files-2.1/ea79e59138b4fa157a417461767bcdd0/jetified-play-services-auth-16.0.1/AndroidManifest.xml:34:13-89
-60            android:exported="true"
-60-->[com.google.android.gms:play-services-auth:16.0.1] /Users/bhavyabansal/.gradle/caches/transforms-2/files-2.1/ea79e59138b4fa157a417461767bcdd0/jetified-play-services-auth-16.0.1/AndroidManifest.xml:35:13-36
-61            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" />
-61-->[com.google.android.gms:play-services-auth:16.0.1] /Users/bhavyabansal/.gradle/caches/transforms-2/files-2.1/ea79e59138b4fa157a417461767bcdd0/jetified-play-services-auth-16.0.1/AndroidManifest.xml:36:13-107
-62
-63        <activity
-63-->[com.google.android.gms:play-services-base:16.0.1] /Users/bhavyabansal/.gradle/caches/transforms-2/files-2.1/914ff4a0c027ca815c4aeae65134bce3/jetified-play-services-base-16.0.1/AndroidManifest.xml:23:9-26:75
-64            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-64-->[com.google.android.gms:play-services-base:16.0.1] /Users/bhavyabansal/.gradle/caches/transforms-2/files-2.1/914ff4a0c027ca815c4aeae65134bce3/jetified-play-services-base-16.0.1/AndroidManifest.xml:24:13-79
-65            android:exported="false"
-65-->[com.google.android.gms:play-services-base:16.0.1] /Users/bhavyabansal/.gradle/caches/transforms-2/files-2.1/914ff4a0c027ca815c4aeae65134bce3/jetified-play-services-base-16.0.1/AndroidManifest.xml:25:13-37
-66            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-66-->[com.google.android.gms:play-services-base:16.0.1] /Users/bhavyabansal/.gradle/caches/transforms-2/files-2.1/914ff4a0c027ca815c4aeae65134bce3/jetified-play-services-base-16.0.1/AndroidManifest.xml:26:13-72
-67
-68        <meta-data
-68-->[com.google.android.gms:play-services-basement:16.0.1] /Users/bhavyabansal/.gradle/caches/transforms-2/files-2.1/29c4f67717195f9a484a03b04356851f/jetified-play-services-basement-16.0.1/AndroidManifest.xml:23:9-25:69
-69            android:name="com.google.android.gms.version"
-69-->[com.google.android.gms:play-services-basement:16.0.1] /Users/bhavyabansal/.gradle/caches/transforms-2/files-2.1/29c4f67717195f9a484a03b04356851f/jetified-play-services-basement-16.0.1/AndroidManifest.xml:24:13-58
-70            android:value="@integer/google_play_services_version" />
-70-->[com.google.android.gms:play-services-basement:16.0.1] /Users/bhavyabansal/.gradle/caches/transforms-2/files-2.1/29c4f67717195f9a484a03b04356851f/jetified-play-services-basement-16.0.1/AndroidManifest.xml:25:13-66
-71    </application>
-72
-73</manifest>
+14-->C:\Users\Arjun\Desktop\Learn-in-one\android\app\src\debug\AndroidManifest.xml:6:5-66
+14-->C:\Users\Arjun\Desktop\Learn-in-one\android\app\src\debug\AndroidManifest.xml:6:22-64
+15    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
+15-->[:file_picker] C:\Users\Arjun\Desktop\Learn-in-one\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-80
+15-->[:file_picker] C:\Users\Arjun\Desktop\Learn-in-one\build\file_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:22-77
+16    <!-- <uses-sdk android:minSdkVersion="14"/> -->
+17    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+17-->[com.google.firebase:firebase-storage:17.0.0] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\563bc192697073ff915157f6dce1e0e7\jetified-firebase-storage-17.0.0\AndroidManifest.xml:26:5-79
+17-->[com.google.firebase:firebase-storage:17.0.0] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\563bc192697073ff915157f6dce1e0e7\jetified-firebase-storage-17.0.0\AndroidManifest.xml:26:22-76
+18    <!--
+19 io.flutter.app.FlutterApplication is an android.app.Application that
+20         calls FlutterMain.startInitialization(this); in its onCreate method.
+21         In most cases you can leave this as-is, but you if you want to provide
+22         additional functionality it is fine to subclass or reimplement
+23         FlutterApplication and put your custom class here.
+24    -->
+25    <application
+25-->C:\Users\Arjun\Desktop\Learn-in-one\android\app\src\main\AndroidManifest.xml:8:5-29:19
+26        android:name="io.flutter.app.FlutterApplication"
+26-->C:\Users\Arjun\Desktop\Learn-in-one\android\app\src\main\AndroidManifest.xml:9:9-57
+27        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+27-->[androidx.core:core:1.1.0] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\3aaf6e5219b7f981ec263df919098c6f\core-1.1.0\AndroidManifest.xml:24:18-86
+28        android:debuggable="true"
+29        android:icon="@mipmap/ic_launcher"
+29-->C:\Users\Arjun\Desktop\Learn-in-one\android\app\src\main\AndroidManifest.xml:11:9-43
+30        android:label="learninone" >
+30-->C:\Users\Arjun\Desktop\Learn-in-one\android\app\src\main\AndroidManifest.xml:10:9-35
+31        <activity
+31-->C:\Users\Arjun\Desktop\Learn-in-one\android\app\src\main\AndroidManifest.xml:12:9-23:20
+32            android:name="com.example.learninone.MainActivity"
+32-->C:\Users\Arjun\Desktop\Learn-in-one\android\app\src\main\AndroidManifest.xml:13:13-41
+33            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+33-->C:\Users\Arjun\Desktop\Learn-in-one\android\app\src\main\AndroidManifest.xml:16:13-163
+34            android:hardwareAccelerated="true"
+34-->C:\Users\Arjun\Desktop\Learn-in-one\android\app\src\main\AndroidManifest.xml:17:13-47
+35            android:launchMode="singleTop"
+35-->C:\Users\Arjun\Desktop\Learn-in-one\android\app\src\main\AndroidManifest.xml:14:13-43
+36            android:theme="@style/LaunchTheme"
+36-->C:\Users\Arjun\Desktop\Learn-in-one\android\app\src\main\AndroidManifest.xml:15:13-47
+37            android:windowSoftInputMode="adjustResize" >
+37-->C:\Users\Arjun\Desktop\Learn-in-one\android\app\src\main\AndroidManifest.xml:18:13-55
+38            <intent-filter>
+38-->C:\Users\Arjun\Desktop\Learn-in-one\android\app\src\main\AndroidManifest.xml:19:13-22:29
+39                <action android:name="android.intent.action.MAIN" />
+39-->C:\Users\Arjun\Desktop\Learn-in-one\android\app\src\main\AndroidManifest.xml:20:17-68
+39-->C:\Users\Arjun\Desktop\Learn-in-one\android\app\src\main\AndroidManifest.xml:20:25-66
+40
+41                <category android:name="android.intent.category.LAUNCHER" />
+41-->C:\Users\Arjun\Desktop\Learn-in-one\android\app\src\main\AndroidManifest.xml:21:17-76
+41-->C:\Users\Arjun\Desktop\Learn-in-one\android\app\src\main\AndroidManifest.xml:21:27-74
+42            </intent-filter>
+43        </activity>
+44        <!--
+45             Don't delete the meta-data below.
+46             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+47        -->
+48        <meta-data
+48-->C:\Users\Arjun\Desktop\Learn-in-one\android\app\src\main\AndroidManifest.xml:26:9-28:33
+49            android:name="flutterEmbedding"
+49-->C:\Users\Arjun\Desktop\Learn-in-one\android\app\src\main\AndroidManifest.xml:27:13-44
+50            android:value="2" />
+50-->C:\Users\Arjun\Desktop\Learn-in-one\android\app\src\main\AndroidManifest.xml:28:13-30
+51
+52        <service android:name="com.google.firebase.components.ComponentDiscoveryService" >
+52-->[:firebase_storage] C:\Users\Arjun\Desktop\Learn-in-one\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
+52-->[:firebase_storage] C:\Users\Arjun\Desktop\Learn-in-one\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:8:18-89
+53            <meta-data
+53-->[:firebase_storage] C:\Users\Arjun\Desktop\Learn-in-one\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+54                android:name="com.google.firebase.components:io.flutter.plugins.firebase.storage.FlutterFirebaseAppRegistrar"
+54-->[:firebase_storage] C:\Users\Arjun\Desktop\Learn-in-one\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-126
+55                android:value="com.google.firebase.components.ComponentRegistrar" />
+55-->[:firebase_storage] C:\Users\Arjun\Desktop\Learn-in-one\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+56            <meta-data
+56-->[:firebase_core] C:\Users\Arjun\Desktop\Learn-in-one\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+57                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseAppRegistrar"
+57-->[:firebase_core] C:\Users\Arjun\Desktop\Learn-in-one\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-123
+58                android:value="com.google.firebase.components.ComponentRegistrar" />
+58-->[:firebase_core] C:\Users\Arjun\Desktop\Learn-in-one\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+59            <meta-data
+59-->[com.google.firebase:firebase-storage:17.0.0] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\563bc192697073ff915157f6dce1e0e7\jetified-firebase-storage-17.0.0\AndroidManifest.xml:31:13-33:85
+60                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+60-->[com.google.firebase:firebase-storage:17.0.0] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\563bc192697073ff915157f6dce1e0e7\jetified-firebase-storage-17.0.0\AndroidManifest.xml:32:17-107
+61                android:value="com.google.firebase.components.ComponentRegistrar" />
+61-->[com.google.firebase:firebase-storage:17.0.0] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\563bc192697073ff915157f6dce1e0e7\jetified-firebase-storage-17.0.0\AndroidManifest.xml:33:17-82
+62        </service>
+63
+64        <activity
+64-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\11fd3627fe134ad3aae3012ae0202227\jetified-play-services-auth-16.0.1\AndroidManifest.xml:23:9-27:75
+65            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+65-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\11fd3627fe134ad3aae3012ae0202227\jetified-play-services-auth-16.0.1\AndroidManifest.xml:24:13-93
+66            android:excludeFromRecents="true"
+66-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\11fd3627fe134ad3aae3012ae0202227\jetified-play-services-auth-16.0.1\AndroidManifest.xml:25:13-46
+67            android:exported="false"
+67-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\11fd3627fe134ad3aae3012ae0202227\jetified-play-services-auth-16.0.1\AndroidManifest.xml:26:13-37
+68            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+68-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\11fd3627fe134ad3aae3012ae0202227\jetified-play-services-auth-16.0.1\AndroidManifest.xml:27:13-72
+69        <!--
+70            Service handling Google Sign-In user revocation. For apps that do not integrate with
+71            Google Sign-In, this service will never be started.
+72        -->
+73        <service
+73-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\11fd3627fe134ad3aae3012ae0202227\jetified-play-services-auth-16.0.1\AndroidManifest.xml:33:9-36:110
+74            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+74-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\11fd3627fe134ad3aae3012ae0202227\jetified-play-services-auth-16.0.1\AndroidManifest.xml:34:13-89
+75            android:exported="true"
+75-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\11fd3627fe134ad3aae3012ae0202227\jetified-play-services-auth-16.0.1\AndroidManifest.xml:35:13-36
+76            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" />
+76-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\11fd3627fe134ad3aae3012ae0202227\jetified-play-services-auth-16.0.1\AndroidManifest.xml:36:13-107
+77
+78        <activity
+78-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\36fe25e17ef9749d123db0eb46ba2d8d\jetified-play-services-base-16.0.1\AndroidManifest.xml:23:9-26:75
+79            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+79-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\36fe25e17ef9749d123db0eb46ba2d8d\jetified-play-services-base-16.0.1\AndroidManifest.xml:24:13-79
+80            android:exported="false"
+80-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\36fe25e17ef9749d123db0eb46ba2d8d\jetified-play-services-base-16.0.1\AndroidManifest.xml:25:13-37
+81            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+81-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\36fe25e17ef9749d123db0eb46ba2d8d\jetified-play-services-base-16.0.1\AndroidManifest.xml:26:13-72
+82
+83        <provider
+83-->[com.google.firebase:firebase-common:17.0.0] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\16599e49545d5ef4c72b7d9f52eb9491\jetified-firebase-common-17.0.0\AndroidManifest.xml:12:9-16:39
+84            android:name="com.google.firebase.provider.FirebaseInitProvider"
+84-->[com.google.firebase:firebase-common:17.0.0] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\16599e49545d5ef4c72b7d9f52eb9491\jetified-firebase-common-17.0.0\AndroidManifest.xml:13:13-77
+85            android:authorities="com.example.learninone.firebaseinitprovider"
+85-->[com.google.firebase:firebase-common:17.0.0] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\16599e49545d5ef4c72b7d9f52eb9491\jetified-firebase-common-17.0.0\AndroidManifest.xml:14:13-72
+86            android:exported="false"
+86-->[com.google.firebase:firebase-common:17.0.0] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\16599e49545d5ef4c72b7d9f52eb9491\jetified-firebase-common-17.0.0\AndroidManifest.xml:15:13-37
+87            android:initOrder="100" />
+87-->[com.google.firebase:firebase-common:17.0.0] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\16599e49545d5ef4c72b7d9f52eb9491\jetified-firebase-common-17.0.0\AndroidManifest.xml:16:13-36
+88
+89        <meta-data
+89-->[com.google.android.gms:play-services-basement:16.1.0] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\34c759aab64b3340f66957b8545cd406\jetified-play-services-basement-16.1.0\AndroidManifest.xml:23:9-25:69
+90            android:name="com.google.android.gms.version"
+90-->[com.google.android.gms:play-services-basement:16.1.0] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\34c759aab64b3340f66957b8545cd406\jetified-play-services-basement-16.1.0\AndroidManifest.xml:24:13-58
+91            android:value="@integer/google_play_services_version" />
+91-->[com.google.android.gms:play-services-basement:16.1.0] C:\Users\Arjun\.gradle\caches\transforms-2\files-2.1\34c759aab64b3340f66957b8545cd406\jetified-play-services-basement-16.1.0\AndroidManifest.xml:25:13-66
+92    </application>
+93
+94</manifest>
