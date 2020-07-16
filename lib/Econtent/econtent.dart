@@ -7,6 +7,7 @@ import 'package:path/path.dart' as path;
 import 'package:open_iconic_flutter/open_iconic_flutter.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
+import 'econtent_2.dart';
 
 class EcontentPage extends StatefulWidget {
   @override
@@ -28,25 +29,13 @@ class _EcontentPageState extends State<EcontentPage> {
     });
   }
 
-  Future<FirebaseApp> connectFirebase() async {
-    final FirebaseApp app = await FirebaseApp.configure(
-      name: 'db',
-      options: FirebaseOptions(
-        googleAppID: '1:144653325752:android:0f7cc380deb5f996b42b4d',
-        apiKey: 'AIzaSyAbw8KaqH5JuY43qOABPJ1xtzsIA1dIn-8',
-        databaseURL: 'https://learn-in-one-1594051122808.firebaseio.com/',
-      ),
-    );
-    return app;
-  }
-
-  var fileTypeToFirebase={
-    "images":  FirebaseDatabase().reference().child("images"),
-    "docs":FirebaseDatabase().reference().child("docs"),
-    "pdfs":FirebaseDatabase().reference().child("pdfs"),
-    "sheets":FirebaseDatabase().reference().child("sheets"),
-    "presentations":FirebaseDatabase().reference().child("presentations"),
-    "others":FirebaseDatabase().reference().child("others")
+  var fileTypeToFirebase = {
+    "images": FirebaseDatabase().reference().child("images"),
+    "docs": FirebaseDatabase().reference().child("docs"),
+    "pdfs": FirebaseDatabase().reference().child("pdfs"),
+    "sheets": FirebaseDatabase().reference().child("sheets"),
+    "presentations": FirebaseDatabase().reference().child("presentations"),
+    "others": FirebaseDatabase().reference().child("others")
   };
   List<String> folderNames = [
     "images",
@@ -86,7 +75,6 @@ class _EcontentPageState extends State<EcontentPage> {
     super.initState();
     dropDownMenuItems = buildDropdownMenuItems(folderNames);
     fileType = dropDownMenuItems[0].value;
-    app = connectFirebase();
     print(dropDownMenuItems);
     print(app);
   }
@@ -165,7 +153,8 @@ class _EcontentPageState extends State<EcontentPage> {
                     .child(
                         '${fileType}/${path.basename(sampleFile.path).toString()}');
                 final StorageUploadTask task = storageRef.putFile(sampleFile);
-                String filename= path.basenameWithoutExtension(sampleFile.path).toString();
+                String filename =
+                    path.basename(sampleFile.path).toString();
                 await task.onComplete;
                 print('File Uploaded');
                 storageRef.getDownloadURL().then((fileURL) {
@@ -173,8 +162,8 @@ class _EcontentPageState extends State<EcontentPage> {
                   //   _uploadedFileURL = fileURL;
                   // });
                   fileTypeToFirebase[fileType].push().set({
-                    'file_name':filename.toString(),
-                    'file_url':fileURL.toString()
+                    'file_name': filename.toString(),
+                    'file_url': fileURL.toString()
                   });
                   // firebaseRef.push().set({
                   //   "file_name": path.basenameWithoutExtension(sampleFile.path).toString(),
@@ -228,9 +217,17 @@ class _EcontentPageState extends State<EcontentPage> {
                   itemCount: folderNames.length,
                   itemBuilder: (BuildContext ctxt, int index) {
                     return ListTile(
-                      leading: icons[index],
-                      title: Text(folderNames[index]),
-                    );
+                        leading: icons[index],
+                        title: Text(folderNames[index]),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Page2(
+                                      folderName: folderNames[index],
+                                    )),
+                          );
+                        });
                   }),
             ),
           ],
@@ -255,11 +252,10 @@ class _EcontentPageState extends State<EcontentPage> {
               child: ListView.builder(
                   itemCount: folderNames.length,
                   itemBuilder: (BuildContext ctxt, int index) {
-                    return 
-                        ListTile(
-                          leading: icons[index],
-                          title: Text(folderNames[index]),
-                        );
+                    return ListTile(
+                      leading: icons[index],
+                      title: Text(folderNames[index]),
+                    );
                   }),
             ),
             Expanded(
