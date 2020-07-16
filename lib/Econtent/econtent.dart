@@ -40,8 +40,14 @@ class _EcontentPageState extends State<EcontentPage> {
     return app;
   }
 
-  var firebaseRef =
-      FirebaseDatabase().reference().child("learn-in-one-1594051122808");
+  var fileTypeToFirebase={
+    "images":  FirebaseDatabase().reference().child("images"),
+    "docs":FirebaseDatabase().reference().child("docs"),
+    "pdfs":FirebaseDatabase().reference().child("pdfs"),
+    "sheets":FirebaseDatabase().reference().child("sheets"),
+    "presentations":FirebaseDatabase().reference().child("presentations"),
+    "others":FirebaseDatabase().reference().child("others")
+  };
   List<String> folderNames = [
     "images",
     "pdfs",
@@ -159,15 +165,17 @@ class _EcontentPageState extends State<EcontentPage> {
                     .child(
                         '${fileType}/${path.basename(sampleFile.path).toString()}');
                 final StorageUploadTask task = storageRef.putFile(sampleFile);
-                String filename= path.basename(sampleFile.path).toString();
+                String filename= path.basenameWithoutExtension(sampleFile.path).toString();
                 await task.onComplete;
                 print('File Uploaded');
                 storageRef.getDownloadURL().then((fileURL) {
                   // setState(() {
                   //   _uploadedFileURL = fileURL;
                   // });
-                  print(fileURL);
-                  print(filename);
+                  fileTypeToFirebase[fileType].push().set({
+                    'file_name':filename.toString(),
+                    'file_url':fileURL.toString()
+                  });
                   // firebaseRef.push().set({
                   //   "file_name": path.basenameWithoutExtension(sampleFile.path).toString(),
                   //   "file_url": fileURL.toString()
@@ -240,22 +248,18 @@ class _EcontentPageState extends State<EcontentPage> {
 // Find the Scaffold in the widget tree and use it to show a SnackBar.
 
       return Expanded(
-        flex: 3,
+        flex: 19,
         child: Column(
           children: <Widget>[
             Expanded(
               child: ListView.builder(
                   itemCount: folderNames.length,
                   itemBuilder: (BuildContext ctxt, int index) {
-                    return Column(
-                      children: <Widget>[
+                    return 
                         ListTile(
                           leading: icons[index],
                           title: Text(folderNames[index]),
-                        ),
-                        Divider()
-                      ],
-                    );
+                        );
                   }),
             ),
             Expanded(
