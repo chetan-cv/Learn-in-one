@@ -53,145 +53,147 @@ class DiscussionForumState extends State<DiscussionForum> {
     // TODO: implement build
     return SafeArea(
       child: Scaffold(
-        body: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                child: Text(
-                  'Discussion Forum',
-                  style: TextStyle(fontSize: 40.0,color: Colors.blue,fontFamily: 'Yellowtail',),
+        body: Container(
+          height: MediaQuery.of(context).size.height,
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  child: Text(
+                    'Discussion Forum',
+                    style: TextStyle(fontSize: 40.0,color: Colors.blue,fontFamily: 'Yellowtail',),
+                  ),
                 ),
               ),
-            ),
 //            Container(
 //              height: 30.0,
 //            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-//                  height: 100,
-                width: MediaQuery.of(context).size.width,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
                 child: Container(
 //                  height: 100,
                   width: MediaQuery.of(context).size.width,
-                  child: Expanded(
-                      child: Container(
-                          decoration: BoxDecoration(
-                            color: Colors.grey[300],
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                          height: 50.0,
-                          child: Row(
-                            children: <Widget>[
-                              SizedBox(width: 15),
-                              Expanded(
-                                child: TextFormField(
-                                  decoration: InputDecoration(
-                                      hintText: 'Search topic',
-                                      border: InputBorder.none),
-                                  controller: _searchedString,
-                                  onEditingComplete: () =>
-                                      searchedString = _searchedString.text,
-                                  onChanged: (value) =>
-                                      searchedString = _searchedString.text,
-                                ),
+                  child: Container(
+//                  height: 100,
+                    width: MediaQuery.of(context).size.width,
+                    child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.grey[300],
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        height: 50.0,
+                        child: Row(
+                          children: <Widget>[
+                            SizedBox(width: 15),
+                            Expanded(
+                              child: TextFormField(
+                                decoration: InputDecoration(
+                                    hintText: 'Search topic',
+                                    border: InputBorder.none),
+                                controller: _searchedString,
+                                onEditingComplete: () =>
+                                    searchedString = _searchedString.text,
+                                onChanged: (value) =>
+                                    searchedString = _searchedString.text,
                               ),
-                              InkWell(
-                                  onTap: () {
-                                    setState(() {
-                                      searchedString = _searchedString.text;
-                                    });
-                                  },
-                                  child: Container(
-                                      child: Icon(
-                                    Icons.search,
-                                    size: 32,
-                                  )))
-                            ],
-                          ))),
+                            ),
+                            InkWell(
+                                onTap: () {
+                                  setState(() {
+                                    searchedString = _searchedString.text;
+                                  });
+                                },
+                                child: Container(
+                                    child: Icon(
+                                  Icons.search,
+                                  size: 32,
+                                )))
+                          ],
+                        )),
+                  ),
                 ),
               ),
-            ),
-            Expanded(
-              child: FutureBuilder<List<DiscussionModel>>(
-                  future: gettingSearchedDiscussion(searchedString),
-                  builder: (context, snapshot) {
-                    return Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
+              Expanded(
+                child: FutureBuilder<List<DiscussionModel>>(
+                    future: gettingSearchedDiscussion(searchedString),
+                    builder: (context, snapshot) {
+                      return Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
 //                      height: MediaQuery.of(context).size.height,
-                        child: Column(
-                          children: <Widget>[
-                            Container(
-                              child: Text(
-                                'Choose topic',
-                                style: TextStyle(fontSize: 20.0),
+                          child: Column(
+                            children: <Widget>[
+                              Container(
+                                child: Text(
+                                  'Choose topic',
+                                  style: TextStyle(fontSize: 20.0),
+                                ),
                               ),
-                            ),
-                            Container(
-                              height: 30.0,
-                            ),
-                            searchedString == ''
-                                ? Expanded(
-                                    child: Container(
-                                      child: GridView.builder(
-                                        itemCount: tags.length,
-                                        gridDelegate:
-                                            SliverGridDelegateWithFixedCrossAxisCount(
-                                                crossAxisCount: 3,
-                                                childAspectRatio: 2.0),
-                                        itemBuilder: (context, index) {
-                                          return GestureDetector(
-                                            onTap: () => Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        DiscussionRoom(
-                                                            tag: tags[index]))),
-                                            child: GridTile(
-                                              child: Container(
-                                                margin: EdgeInsets.only(right:10,bottom: 10),
-                                                child: DiscussionTile(
-                                                  imageUrl: urls[index],
-                                                  subjectName: tags[index],
-                                                  Height: 250,
-                                                  Width: 300,
+                              Container(
+                                height: 30.0,
+                              ),
+                              searchedString == ''
+                                  ? Expanded(
+                                      child: Container(
+                                        child: GridView.builder(
+                                          itemCount: tags.length,
+                                          gridDelegate:
+                                              SliverGridDelegateWithFixedCrossAxisCount(
+                                                  crossAxisCount: 3,
+                                                  childAspectRatio: 2.0),
+                                          itemBuilder: (context, index) {
+                                            return GestureDetector(
+                                              onTap: () => Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          DiscussionRoom(
+                                                              tag: tags[index]))),
+                                              child: GridTile(
+                                                child: Container(
+                                                  margin: EdgeInsets.only(right:10,bottom: 10),
+                                                  child: DiscussionTile(
+                                                    imageUrl: urls[index],
+                                                    subjectName: tags[index],
+                                                    Height: 250,
+                                                    Width: 300,
+                                                  ),
                                                 ),
                                               ),
-                                            ),
-                                          );
-                                        },
-                                      ),
-                                    ),
-                                  )
-                                : snapshot.connectionState ==
-                                        ConnectionState.done
-                                    ? snapshot.data != null
-                                        ? Expanded(
-                                            child: ListView.builder(
-                                                itemCount: snapshot.data.length,
-                                                itemBuilder: (context, index) {
-                                                  return Card(
-                                                      child: QuestionTile(
-                                                          snapshot, index, context));
-                                                }),
-                                          )
-                                        : Container(
-                                            child: Text('no results found'),
-                                          )
-                                    : Container(
-                                        child: Center(
-                                          child: CircularProgressIndicator(),
+                                            );
+                                          },
                                         ),
                                       ),
-                          ],
+                                    )
+                                  : snapshot.connectionState ==
+                                          ConnectionState.done
+                                      ? snapshot.data != null
+                                          ? Expanded(
+                                              child: ListView.builder(
+                                                  itemCount: snapshot.data.length,
+                                                  itemBuilder: (context, index) {
+                                                    return Card(
+                                                        child: QuestionTile(
+                                                            snapshot, index, context));
+                                                  }),
+                                            )
+                                          : Container(
+                                              child: Text('no results found'),
+                                            )
+                                      : Container(
+                                          child: Center(
+                                            child: CircularProgressIndicator(),
+                                          ),
+                                        ),
+                            ],
+                          ),
                         ),
-                      ),
-                    );
-                  }),
-            ),
-          ],
+                      );
+                    }),
+              ),
+            ],
+          ),
         ),
       ),
     );

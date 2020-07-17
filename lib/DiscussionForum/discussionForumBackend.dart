@@ -7,17 +7,17 @@ Future<http.Response> postingQuestion(String title, String question) async {
   FlutterSecureStorage _store = FlutterSecureStorage();
 
   String author = await _store.read(key: 'name');
-
+  print(author);
   return await http.post('https://learninone.herokuapp.com/post/list/', body: {
     "title": title,
-//    "postType": "AI",
+    "postType": "Post",
 //    "parentId": "None",
     "creationDate": DateTime.now().toIso8601String(),
     "body": question,
     "author": author,
 //    "tags": [title]
   }).then((response) {
-    print(response.statusCode);
+    print(response.body);
     return response;
   });
 }
@@ -27,11 +27,11 @@ Future<List<DiscussionModel>> gettingSearchedDiscussion(String title) async {
   return await http
       .get('https://learninone.herokuapp.com/post/list/?search=$title')
       .then((response) {
-    print(response.reasonPhrase);
+//    print(response.reasonPhrase);
     List mappedDiscussion = jsonDecode(response.body)['results'];
     List<DiscussionModel> discussions = [];
     mappedDiscussion.forEach((element) {
-      print(element["title"]);
+      print(element["commentCount"]);
       discussions.add(DiscussionModel.fromJson(element));
     });
     return discussions;
@@ -45,7 +45,7 @@ Future<List<DiscussionModel>> gettingDiscussion(String title) async {
   return await http
       .get('https://learninone.herokuapp.com/post/list/?title=$title')
       .then((response) {
-    print(response.reasonPhrase);
+//    print(response.reasonPhrase);
     List mappedDiscussion = jsonDecode(response.body)['results'];
     List<DiscussionModel> discussions = [];
     mappedDiscussion.forEach((element) {

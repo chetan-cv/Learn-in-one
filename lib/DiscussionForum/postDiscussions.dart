@@ -154,7 +154,7 @@ class PostDiscussionsState extends State<PostDiscussions> {
             )),
           ),
           FutureBuilder<List<CommentsModel>>(
-              future: gettingComments(),
+              future: gettingComments(widget.post.id),
               builder: (context, snapshot) {
                 return Padding(
                   padding: const EdgeInsets.all(8.0),

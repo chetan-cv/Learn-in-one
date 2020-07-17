@@ -73,15 +73,15 @@ class DiscussionRoomState extends State<DiscussionRoom> {
                                 onPressed: () async => _question.text != ''
                                     ? await postingQuestion(
                                             widget.tag, _question.text)
-                                        .then((value) {
+                                        .then((value) async {
                                         if (value.statusCode >= 200 &&
                                             value.statusCode < 400) {
-                                          showDialog(
+                                          await showDialog(
                                               context: context,
                                               builder: (context) => AlertDialog(
                                                     title: Text(
                                                         'Question submitted!'),
-                                                  ));
+                                                  )).whenComplete(() => setState((){}));
                                         } else {
                                           showDialog(
                                               context: context,
@@ -113,8 +113,7 @@ class DiscussionRoomState extends State<DiscussionRoom> {
                     child: ListView.builder(
                         itemCount: snapshot.data.length,
                         itemBuilder: (context, index) => Card(
-                              child: QuestionTile(snapshot, index, context)
-                            )),
+                            child: QuestionTile(snapshot, index, context))),
                   )
                 : Container(
                     child: Center(
