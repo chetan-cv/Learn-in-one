@@ -1,16 +1,12 @@
-# learninone
+# Learn In One
 
-A new Flutter application.
+Learn In One that is Made In India for our Indian Schools, Colleges and Universities 
+We've taken a step under the Atma Nirbhar Bharat to help out the students and teachers and provide them with the right set of tools and technology 
+to make the learning path more productive and potent. 
 
-## Getting Started
+Our team of Learn In One consists of 4 members who share a common value and belief that is to uplift 
+the current education system and make it more better and efficient for our youth community so that
+they can learn more and grow better both academically and intellectually. 
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
